@@ -1,0 +1,454 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --mainColor: #3d3939;
+    --textColor: #a7a4a4;
+    --mainTransition: 0.5s;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.title {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    margin: auto;
+    padding: 10px 30px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.title:after {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    right: 15px;
+    top: -23px;
+    background-color: black;
+}
+
+.title::before {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    left: 15px;
+    top: -23px;
+    background-color: black;
+}
+
+header img {
+    max-width: 80px;
+    min-width: 80px;
+}
+
+header {
+    height: 70px;
+    background-color: #3d3939;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+header ul {
+    display: flex;
+    margin-right: 35px;
+    z-index: 1001; 
+}
+
+header ul li {
+    margin-left: 35px;
+}
+
+header ul li a {
+    color: var(--textColor);
+    transition: var(--mainTransition);
+}
+
+header ul li a:hover {
+    color: white;
+}
+
+header .titlee {
+    display: flex;
+    align-items: center;
+}
+
+header .titlee h2 {
+    color: var(--textColor);
+}
+
+@media (min-width: 964px) {
+    header i {
+        display: none !important;
+    }
+    header ul p {
+        display: none !important;
+    }
+}
+
+@media (max-width: 964px) {
+    header ul {
+        flex-direction: column;
+        height: 100vh;
+        position: fixed;
+        right: -223px;
+        top: 0;
+        margin: 0;
+        background-color: #3d3939;
+        width: 180px;
+        transition: var(--mainTransition) linear;
+    }
+
+    header ul li:first-child {
+        margin-top: 150px;
+    }
+
+    header ul li {
+        margin-bottom: 25px;
+        margin-left: 20px;
+    }
+
+    header ul p {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: var(--textColor);
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    header ul li a {
+        font-size: 20px;
+    }
+}
+
+.landing {
+    max-width: 100vw;
+    height: 700px;
+    background-image: url('/imgs/food-4k-1pf6px6ryqfjtnyr.jpg');
+    background-size: cover;
+    position: relative;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.landing .content {
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.landing .content h1 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 80px;
+    font-weight: normal;
+}
+
+.landing .content h3 {
+    color: white;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.landing .content .search {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.landing .content .search input {
+    width: 400px;
+    padding: 15px;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid black;
+    margin-bottom: 25px;
+}
+
+.landing .content .search i {
+    position: absolute !important;
+    top: 11%;
+    left: 352px;
+}
+
+.landing .content .search button {
+    width: 200px;
+    padding: 10px;
+    height: 45px;
+    border-radius: 7px;
+    outline: none;
+    background-color: black;
+    border: 1px solid black;
+    margin-bottom: 25px; 
+    color: var(--textColor);
+    cursor: pointer;
+}
+
+.landing .content span {
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 519px) {
+    .landing .content {
+        margin-left: 20px;
+    }
+
+    .landing .content h1 {
+        font-size: 60px;
+        margin-left: 0;
+    }
+
+    .landing .content .search input {
+        max-width: 250px;
+    }
+
+    .landing .content .search i {
+        position: absolute !important;
+        top: 11%;
+        left: 223px;
+    }
+}
+
+.ourRecpies {
+    margin-top: 200px;
+}
+
+.ourRecpies .content {
+    margin-top: 200px;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    max-width: 100vw;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.ourRecpies img {
+    width: 300px;
+    min-height: 225px;
+    max-height: 225px;
+    margin: 0;
+}
+
+.ourRecpies .recipe {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 619px) {
+    .ourRecpies .recipe {
+        text-align: center;
+    }
+    .ourRecpies img {
+        margin-bottom: 15px;
+    }
+}
+
+.restaurantOwner {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.restaurantOwner .title {
+    margin-bottom: 100px;
+}
+
+.restaurantOwner h1:not(:nth-child(1)),
+.restaurantOwner p {
+    margin-bottom: 25px;
+}
+
+.orders img {
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 188px;
+    margin-bottom: 25px;
+    margin-top: 316px;
+    transition: var(--mainTransition);
+}
+
+.orders .order {
+    margin-bottom: 25px;
+    overflow: hidden;
+    max-height: 300px;
+}
+
+.orders {
+    text-align: center;
+    margin-top: 200px;
+    max-height: 1242.52px;
+}
+
+.orders .title {
+    margin-bottom: 100px;
+}
+
+.restaurantOwner:has(.getter) p {
+    transition: var(--mainTransition) linear;
+    opacity: 0;
+}
+
+.restaurantOwner:has(.getter) .pDiv:first-child p {
+    animation: marginLeftZero var(--mainTransition) linear forwards;
+}
+
+.restaurantOwner:has(.getter) .pDiv:nth-child(2) p {
+    animation: marginLeftZero var(--mainTransition) linear forwards 0.5s;
+}
+
+.restaurantOwner:has(.getter) .pDiv:nth-child(3) p {
+    animation: marginLeftZero var(--mainTransition) linear forwards 1s;
+}
+
+
+.restaurantOwner:has(.getter) .pDiv:nth-child(4) p {
+    animation: marginLeftZero var(--mainTransition) linear forwards 1.5s;
+}
+
+.restaurantOwner:has(.getter) .pDiv:last-child p {
+    animation: marginLeftZero var(--mainTransition) linear forwards 2s;
+}
+
+.features {
+    margin-top: 200px;
+}
+
+.features .title {
+    margin-bottom: 100px;
+}
+
+.features .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    padding: 10px;
+    row-gap: 40px;
+}
+
+.features .content h2,
+.features .content .feature-title p {
+    margin-bottom: 25px;
+}
+
+.features .content .feature-title {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 130px;
+    transition: var(--mainTransition) linear;
+}
+
+.features .content .feature-title p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.features .content .feature {
+    max-height: 125px;
+    min-height: 125px;
+    overflow: hidden;
+    max-width: 90vw;
+}
+
+.features .content #a0 {
+    animation: marginBottomZero linear var(--mainTransition) forwards;
+}
+
+.features .content #a1 {
+    animation: marginBottomZero linear var(--mainTransition) forwards 0.5s;
+}
+
+.features .content #a2 {
+    animation: marginBottomZero linear var(--mainTransition) forwards 1s;
+}
+
+.features .content #a3 {
+    animation: marginBottomZero linear var(--mainTransition) forwards 1.5s;
+}
+
+footer {
+    margin-top: 200px;
+    padding: 20px;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+}
+
+footer h1 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .content a {
+    opacity: 0;
+}
+
+footer .content .active:first-child {
+    animation: marginLeftZero linear var(--mainTransition) forwards;
+}
+
+footer .content .active:nth-child(2) {
+    animation: marginLeftZero linear var(--mainTransition) forwards 0.5s;
+}
+
+footer .content .active:nth-child(3) {
+    animation: marginLeftZero linear var(--mainTransition) forwards 1s;
+}
+
+footer .content .active:last-child {
+    animation: marginLeftZero linear var(--mainTransition) forwards 1.5s;
+}
+@keyframes marginLeftZero {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes marginBottomZero {
+    0% {
+        margin-top: 130px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
